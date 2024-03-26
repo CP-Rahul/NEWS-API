@@ -3,5 +3,7 @@ const dotenv = require('dotenv');
 dotenv.config();
 
 module.exports = {
-    PORT: process.env.PORT
+    PORT: process.env.PORT,
+    ALLNEWS: process.env.NEWS_URL,
+    TOPHEADLINES: process.env.TOP_HEADLINES_URL
 }
