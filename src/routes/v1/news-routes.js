@@ -9,4 +9,8 @@ router.get('/everything',
         NewsMiddlewares.validateFetchNews,
         NewsController.getAllNews);
 
+router.get('/top-headlines', 
+        NewsMiddlewares.validateFetchNews,
+        NewsController.getTopHeadLines);
+
 module.exports = router;

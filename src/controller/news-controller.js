@@ -17,6 +17,24 @@ async function getAllNews(req, res) {
     }
 }
 
+async function getTopHeadLines(req, res) {
+    try {
+        const apiKey = req.headers['x-api-key'];
+        const news = await NewsService.getTopHeadLines(req.query, apiKey);
+        SuccessResponse.data = news;
+        return res
+                .status(200)
+                .json(SuccessResponse);
+    } catch (error) {
+        ErrorResponse.error = error;
+        return res
+                .status(error.statusCode)
+                .json(ErrorResponse);
+    }
+}
+
+
 module.exports = {
-    getAllNews
+    getAllNews,
+    getTopHeadLines
 };
