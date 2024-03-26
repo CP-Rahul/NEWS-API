@@ -13,4 +13,8 @@ router.get('/top-headlines',
         NewsMiddlewares.validateFetchNews,
         NewsController.getTopHeadLines);
 
+router.get('/top-headlines/sources', 
+        NewsMiddlewares.validateFetchNews,
+        NewsController.getAvailablePublishers);
+
 module.exports = router;
